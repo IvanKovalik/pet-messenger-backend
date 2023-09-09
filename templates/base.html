@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>HEllo world
+    </title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+</head>
+<body>
+<main>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-3" style="background: #f5e7e7; height: 100vh;">
+
+                <!-- This is search -->
+                <div class="row align-items-start"
+                     style="margin-top: 0.5rem; position:relative; padding: 0.5rem 0.5rem 1.2rem;">
+                    <!-- This is dropdown -->
+                    <div class="col-2">
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown" type="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                |||
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="input-group">
+                            <div class="input-group-text">
+                                <a href="#" style="width: 0.75rem; height: 0.75rem;">
+
+                                </a>
+                            </div>
+                            <input type="text" class="form-control" placeholder="Search">
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- This is chats -->
+                <div class="row" style="padding-left: 0.5rem">
+
+                    <ul class="list-group">
+                        <li class="list-group-item" style="margin-bottom: 0.2rem;">
+                            <a href="#" style="text-decoration: none;">
+                                <div class="row">
+                                    <div class="col">
+                                        <img src="views_icon.webp" alt="" height="60px" width="60px">
+                                    </div>
+                                    <div class="col-8" style="text-align: left">
+                                        <div class="row">Header</div>
+                                        <div class="row">last message</div>
+                                    </div>
+                                </div>
+                            </a>
+
+                        </li>
+
+                        <li class="list-group-item">A second item</li>
+                    </ul>
+                </div>
+
+                <!-- This is new chat button -->
+                <div class="row" style="position:absolute; left: 21%; bottom: 1.3rem;">
+                    <div class="dropdown">
+                        <button class="btn btn-primary dropdown" type="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                            +
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-9 " style="background: #ddddf5; height: 100vh;">
+
+                <div class="row" style=" position:relative; padding: 1rem 0.5rem 0.5rem;background: aliceblue">
+                    <div class="col"><img src="#" alt="icon"></div>
+                    <div class="col">Name</div>
+                    <div class="col">
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown" type="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                |||
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <hr style="margin: 0;">
+
+                <div class="row">
+                    <div class="row"></div>
+
+                    <div class="row align-items-center"
+                         style="position:absolute; bottom: 1.5rem; width: 50rem; margin-left: 7%;">
+                        <form method="post">
+                            {% csrf_token %}
+                            <div class="input-group input-group-lg">
+                                {#                                <span class="input-group-text" id="inputGroup-sizing-lg">Large</span>#}
+                                <input type="text" class="form-control" placeholder="Message"
+                                       aria-describedby="inputGroup-sizing-lg">
+                                <button type="submit">Send</button>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</main>
+
+<!-- Bootstrap JavaScript Libraries -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+        integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+</script>
+</body>
+
+</html>
