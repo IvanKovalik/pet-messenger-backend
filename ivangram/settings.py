@@ -41,6 +41,12 @@ INSTALLED_APPS = [
     'accounts',
     'pages',
     'services',
+    'friends',
+    'profiles',
+
+    'rest_framework',
+    'channels',
+
 ]
 
 MIDDLEWARE = [
