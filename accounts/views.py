@@ -58,16 +58,6 @@ class LoginView(FormView):
             return HttpResponseRedirect(self.get_success_url())
         return super().dispatch(self.request, *args, **kwargs)
 
-    # @method_decorator(sensitive_post_parameters('password'))
-    # @method_decorator(csrf_protect)
-    # @method_decorator(never_cache)
-    # def dispatch(self, request, *args, **kwargs):
-    #     if self.request.user.is_authenticated:
-    #         redirect_to = self.get_success_url()
-    #         return HttpResponseRedirect(redirect_to)
-    #     # return super().dispatch(self.request, *args, **kwargs)
-    #     return super(Login, self).dispatch(request, *args, **kwargs)
-
     def get_form_class(self):
         return self.form_class
 
@@ -80,9 +70,6 @@ class LoginView(FormView):
 
 
 class LogoutView(RedirectView):
-    """
-    Provides users the ability to logout
-    """
     url = reverse_lazy('core:home')
 
     def get(self, request, *args, **kwargs):
