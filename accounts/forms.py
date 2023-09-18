@@ -12,20 +12,16 @@ class UserRegistrationForm(UserCreationForm):
         self.fields['email'].widget.attrs.update({'placeholder': 'Enter Email'})
         self.fields['password1'].widget.attrs.update({'placeholder': 'Enter password'})
         self.fields['password2'].widget.attrs.update({'placeholder': 'Repeat your password'})
-        # self.fields['email'].widget.attrs['placeholder'] = self.fields['email'].label or 'email@address.nl'
 
     class Meta:
         model = User
-        fields = ("username",
-                  "email",
-                  "gender",
-                  "password1",
-                  "password2")
-
-        # widgets = {
-        #     'password1': forms.TextInput(attrs={'placeholder': 'Password'}),
-        #     'password2': forms.TextInput(attrs={'placeholder': 'Repeat your password'}),
-        # }
+        fields = (
+            "username",
+            "email",
+            "gender",
+            "password1",
+            "password2"
+        )
 
     def clean_username(self):
         username = self.cleaned_data['username']
@@ -71,7 +67,6 @@ class UserLoginForm(forms.Form):
             if not self.user.is_active:
                 raise forms.ValidationError("User is not Active.")
 
-        # return self.cleaned_data
         return super(UserLoginForm, self).clean()
 
     def get_user(self):

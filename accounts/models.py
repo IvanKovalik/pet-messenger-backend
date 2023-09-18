@@ -20,6 +20,9 @@ class User(AbstractUser):
 
     USERNAME_FIELD = "email"
     REQUIRED_FIELDS = ["username", "gender"]
+    
+    user_permissions = []
+    groups = []
 
     def __unicode__(self):
         return self.email
