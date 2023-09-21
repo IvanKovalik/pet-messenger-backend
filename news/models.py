@@ -1,8 +1,6 @@
 from django.db import models
 from django.db.models import Q
 from django.utils import timezone
-from wagtail.models import TranslatableMixin
-from wagtail.snippets.models import register_snippet
 
 
 class NewsQuerySet(models.query.QuerySet):
@@ -14,8 +12,7 @@ class NewsQuerySet(models.query.QuerySet):
         )
 
 
-@register_snippet
-class News(TranslatableMixin, models.Model):
+class News(models.Model):
     headline = models.CharField(
         max_length=300,
         help_text="Title of the article, post or media clip",
@@ -70,7 +67,7 @@ class News(TranslatableMixin, models.Model):
 
     objects = NewsQuerySet.as_manager()
 
-    class Meta(TranslatableMixin.Meta):
+    class Meta():
         verbose_name = "news article"
         verbose_name_plural = "news"
         ordering = ("-date",)
