@@ -1,10 +1,9 @@
 from django.contrib import admin
-from django.urls import path
-
-from pages.views import IndexView
+from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', IndexView.as_view(), name='index'),
+    path('', include('pages.urls')),
+    path('api/', include('api.urls')),
 
 ]

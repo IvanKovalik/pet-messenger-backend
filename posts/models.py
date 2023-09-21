@@ -8,7 +8,7 @@ from django.utils.translation import gettext_lazy as _
 from ivangram.settings import AUTH_USER_MODEL
 
 
-class Article(Model):
+class Post(Model):
     author = ForeignKey(
         AUTH_USER_MODEL,
         DO_NOTHING,
@@ -50,7 +50,7 @@ class Article(Model):
         self.save(update_fields=['likes'])
 
     def next_post(self):
-        return Article.objects.filter(id__gt=self.id).order_by('id').first()
+        return Post.objects.filter(id__gt=self.id).order_by('id').first()
 
     def previous_post(self):
-        return Article.objects.filter(id__lt=self.id).first()
+        return Post.objects.filter(id__lt=self.id).first()
